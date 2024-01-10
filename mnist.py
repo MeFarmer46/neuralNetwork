@@ -9,7 +9,7 @@ import time
 data_var = data()
 
 # Network settings
-network_path = "./networks/net3"    # defines the path where te network will be safed
+network_path = "./networks/net2"    # defines the path where te network will be safed
 
 example_amount_train = 60000        # amount of training examples used. Max 60,000
 example_amount_test = 10000         # amount of test examples used. Max 10,000
