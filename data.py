@@ -16,4 +16,3 @@ class data:
         x_train, y_train = self.preprocess(train_images, train_labels, amount_train)
         x_test, y_test = self.preprocess(test_images, test_labels, amount_test)
         return x_train, y_train, x_test, y_test
-        

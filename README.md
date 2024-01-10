@@ -17,7 +17,7 @@ Training data consists of two arrays. One with 28x28 images and another array wi
 
 <br>
 
-## Available networks:
+## Available networks
 Pre-trained networks for the MNIST dataset. Can be used by changing the network_path variable.
 
 #### Network 1
@@ -26,14 +26,14 @@ Short network with 3 layers and few neurons. Trained to about 95% accuracy on te
 Network can be used by setting the network_path variable to "./networks/net1"
 <br> <br>
 Network variable: <br>
-network = [
-    denseLayer(784, 40),
-    sigmoid(),
-    denseLayer(40, 20),
-    sigmoid(),
-    denseLayer(20, 10),
-    sigmoid()
-]
+network = [ <br>
+    denseLayer(784, 40), <br>
+    sigmoid(), <br>
+    denseLayer(40, 20), <br>
+    sigmoid(), <br>
+    denseLayer(20, 10), <br>
+    sigmoid() <br>
+] <br>
 
 <br>
 
@@ -43,15 +43,15 @@ Long network with 5 layers and a lot of neurons. Trained to about 96% accuracy o
 Network can be used by setting the network_path variable to "./networks/net2"
 <br> <br>
 Network variable: <br>
-network = [
-    denseLayer(784, 100),
-    sigmoid(),
-    denseLayer(100, 100),
-    sigmoid(),
-    denseLayer(100, 100),
-    sigmoid(),
-    denseLayer(100, 40),
-    sigmoid(),
-    denseLayer(40, 10),
-    sigmoid()
-]
+network = [ <br>
+    denseLayer(784, 100),  <br>
+    sigmoid(),  <br>
+    denseLayer(100, 100),  <br>
+    sigmoid(),  <br>
+    denseLayer(100, 100),  <br>
+    sigmoid(),  <br>
+    denseLayer(100, 40),  <br>
+    sigmoid(),  <br>
+    denseLayer(40, 10), <br>
+    sigmoid() <br>
+] <br>
