@@ -9,6 +9,7 @@ def predict(network, input):
 
 
 def train(save, network, loss, loss_prime, x_train, y_train, epochs = 1000, learning_rate = 0.01, verbose = True):
+    start_time_full = time.time()
     for e in range(epochs):
         start_time = time.time()
         error = 0
@@ -30,14 +31,17 @@ def train(save, network, loss, loss_prime, x_train, y_train, epochs = 1000, lear
         if verbose:
             print(f"{e + 1}/{epochs}, time: {epoch_time}, error={round(error, 5)}")
         save.write(network)
+    end_time_full = time.time()
+    print(f"\n\nTotal training time: {round((end_time_full-start_time_full)/60)} minutes")
 
 
-def test(network, x, y, type="test set"):
+def test(network, x, y, type="test set", makeLog=False):
     right = 0
     wrong = 0
     total = 0
+    wrongNumbers = []
 
-    for x, y in zip(x, y):
+    for i, (x, y) in enumerate(zip(x, y)):
         output = np.argmax(predict(network, x))
         label = np.argmax(y)
 
@@ -46,6 +50,9 @@ def test(network, x, y, type="test set"):
             right += 1
         else:
             wrong += 1
-
+            if makeLog == True:
+                wrongNumbers.append(i)
+        
     print(f"Network testing complete. Tested set: {type}")
     print(f"Success rate: {round(right / total * 100, 1)}% \n")
+    return wrongNumbers
